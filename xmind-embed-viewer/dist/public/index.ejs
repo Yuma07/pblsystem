@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xmind編集システム</title>
+</head>
+<body>
+<div style="max-width: 1960px">
+  <div id="mount">
+
+    <main>
+
+      <script>
+        var sw = '';
+      </script>
+    
+      <div class="wrapper">
+        <div class="content">
+
+
+            <div class="xmindbutton">
+              <input class="finish btn" type="submit"  value="完成" onclick="clickFinishButton()">
+              <script>clickFinishButton()</script>
+            </div>
+          </div>
+        
+          <div class="sidearea">
+            <div class="listarea">
+              <table class="items" id="items">
+        
+              </table>
+
+                <script>
+                  var fig = ['A','B','C','D','A','B','C','D','A','B','C','D','A','B','C','A']
+                  const div = document.getElementById("items");
+                  var innertext = '';
+                  for(var n in fig){
+                    innertext += '<tr><td class="item" id="copy_' + n +'" onclick="clickitem(this)">' + fig[n] + '</td></tr>';
+                  }
+                  div.innerHTML = innertext;
+                </script>
+    
+              
+            </div>
+            <div class="cardarea" id="card">
+              <table class="cardlist">
+                
+                
+                <tr><td><img class="img" src= "/image1" alt="Image" class="card" id="card1" onclick="clickCard1()"></td></tr> 
+                <tr><td><img class="img" src="/image2" alt="#" class="card" id="card2" onclick="clickCard2()"></td></tr>
+                <tr><td><img class="img" src="/image3" alt="#" class="card" id="card3" onclick="clickCard3()"></td></tr>
+                <tr><td><img class="img" src="/image4" alt="#" class="card" id="card4" onclick="clickCard4()"></td></tr>
+                <tr><td><img class="img" src="/image5" alt="#" class="card" id="card5" onclick="clickCard5()"></td></tr>
+                <tr><td><img class="img" src="/image6" alt="#" class="card" id="card6" onclick="clickCard6()"></td></tr>
+                <tr><td><img class="img" src="/image7" alt="#" class="card" id="card7" onclick="clickCard7()"></td></tr>
+                <tr><td><img class="img" src="/image8" alt="#" class="card" id="card8" onclick="clickCard8()"></td></tr>
+                <tr><td><img class="img" src="/image9" alt="#" class="card" id="card9" onclick="clickCard9()"></td></tr>
+                <tr><td><img class="img" src="/image10" alt="#" class="card" id="card10" onclick="clickCard10()"></td></tr>
+                <tr><td><img class="img" src="/image11" alt="#" class="card" id="card11" onclick="clickCard11()"></td></tr>
+                
+                
+            </table>
+            </div>
+
+            <div class="cardinput" id="cardinput">
+              <div class="input" id="item">
+                <div id="A">
+                  <p><input class="input" type="text" name="a1" id="A-1" value="言葉の定義"></p>
+                  <p>言葉<input class="input" type="text" name="a2" id="A-2"></p>
+                  <p>意味<input class="input" type="text" name="a3" id="A-3"></p>
+                </div>
+
+                <div id="B">
+                  <p><input class="input" type="text" name="b1" id="B-1" value="理想的な行動"></p>
+                  <p>具体的な場面<input class="input" type="text" name="b2" id="B-2"></p>
+                  <p>行動<input class="input" type="text" name="b3" id="B-3"></p>
+                </div>
+                <style>
+                  #B{
+                    position:absolute;
+                    top:-5%;
+                  }
+                </style>
+
+                <div id="C">
+                  <p><input class="input" type="text" name="c1" id="C-1" value="アプローチ"></p>
+                  <p>提案事項<input class="input" type="text" name="c2" id="C-2"></p>
+                  <p>解決する問題<input class="input" type="text" name="c3" id="C-3"></p>
+                  <p>提案事項によってどうなるのか<input class="input" type="text" name="c4" id="C-4"></p>
+                </div>
+                <style>
+                  #C{
+                    position:absolute;
+                    top:-8%;
+                  }
+                </style>
+
+                <div id="D">
+                  <p><input class="input" type="text" name="d1" id="D-1" value="背景"></p>
+                  <p>場面<input class="input" type="text" name="d2" id="D-2"></p>
+                  <p>理想的な行動<input class="input" type="text" name="d3" id="D-3"></p>
+                  <p>理想的な行動のための条件<input class="input" type="text" name="d4" id="D-4"></p>
+                </div>
+
+                <style>
+                  #D{
+                    position:absolute;
+                    top:-9%;
+                  }
+                </style>
+
+                <div id="E">
+                  <p><input class="input" type="text" name="e1" id="E-1" value="論文情報"></p>
+                  <p>タイトル<input class="input" type="text" name="e2" id="E-2"></p>
+                  <p>著者<input class="input" type="text" name="e3" id="E-3"></p>
+                  <p>発行年<input class="input" type="text" name="e4" id="E-4"></p>
+                  <p>ぺ―ジ<input class="input" type="text" name="e5" id="E-5"></p>
+                  <p>学会誌名<input class="input" type="text" name="e6" id="E-6"></p>
+                </div>
+
+                <style>
+                  #E{
+                    position:absolute;
+                    top:-9%;
+                  }
+                </style>
+
+                <div id="F">
+                  <p><input class="input" type="text" name="f1" id="F-1" value="参考文献"></p>
+                  <p>主張<input class="input" type="text" name="f2" id="F-2"></p>
+                  <p>自身の研究との関連<input class="input" type="text" name="f3" id="F-3"></p>
+                </div>
+
+                <style>
+                  #F{
+                    position:absolute;
+                    top:-9%;
+                  }
+                </style>
+
+                <div id="G">
+                  <p><input class="input" type="text" name="g1" id="G-1" value="参考文献"></p>
+                  <p>参考文献の情報<input class="input" type="text" name="g2" id="G-2"></p>
+                  <p>解決したい課題<input class="input" type="text" name="g3" id="G-3"></p>
+                  <p>解決方法<input class="input" type="text" name="g4" id="G-4"></p>
+                  <p>研究の問題点<input class="input" type="text" name="g5" id="G-5"></p>
+                </div>
+
+                <style>
+                  #G{
+                    position:absolute;
+                    top:-9%;
+                  }
+                </style>
+
+                <div id="H">
+                  <p><input class="input" type="text" name="h1" id="H-1" value="目標"></p>
+                  <p>どうゆう人<input class="input" type="text" name="h2" id="H-2"></p>
+                  <p>どうしたい<input class="input" type="text" name="h3" id="H-3"></p>
+                  <p>どうゆうシステム<input class="input" type="text" name="h4" id="H-4"></p>
+                </div>
+
+                <style>
+                  #H{
+                    position:absolute;
+                    top:-9%;
+                  }
+                </style>
+
+                <div id="I">
+                  <p><input class="input" type="text" name="i1" id="I-1" value="問題点"></p>
+                  <p>どうゆう人<input class="input" type="text" name="i2" id="I-2"></p>
+                  <p>できないこと<input class="input" type="text" name="i3" id="I-3"></p>
+                  <p>できない原因<input class="input" type="text" name="i4" id="I-4"></p>
+                </div>
+                <style>
+                  #I{
+                    position:absolute;
+                    top:-9%;
+                  }
+                </style>
+
+                <div id="J">
+                  <p><input class="input" type="text" name="j1" id="J-1" value="場面設定"></p>
+                  <p>社会的情勢<input class="input" type="text" name="j2" id="J-2"></p>
+                  <p>活動内容<input class="input" type="text" name="j3" id="J-3"></p>
+                </div>
+
+                <style>
+                  #J{
+                    position:absolute;
+                    top:-9%;
+                  }
+                </style>
+
+                <div id="K">
+                  <p><input class="input" type="text" name="k1" id="K-1" value="はじめに"></p>
+                  <p>背景<input class="input" type="text" name="k2" id="K-2"></p>
+                  <p>問題点<input class="input" type="text" name="k3" id="K-3"></p>
+                  <p>目標<input class="input" type="text" name="k4" id="K-4"></p>
+                  <p>先行研究<input class="input" type="text" name="k5" id="K-5"></p>
+                  <p>アプローチ<input class="input" type="text" name="k6" id="K-6"></p>
+                  <p>章構成<input class="input" type="text" name="k7" id="K-7"></p>
+                </div>
+
+                <style>
+                  #K{
+                    position:absolute;
+                    top:-9%;
+                  }
+                </style>
+
+                <div class="node" id="node">
+                  つなげるノードの選択
+                  <select name="" id="parent">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+                <style>
+                  .node{
+                    position: absolute;
+                    top: 70%;
+                  }
+                </style>
+
+            
+                  
+              </div>
+              <div class="cardbutton">
+                <input class="add btn" type="submit" id="submit" value="追加" onclick="clickAddButton()">
+                <script>clickAddButton()</script>
+                <input class="back btn" id="back" type="submit"  value="戻る" onclick="clickBackButton()">
+                <script>clickBackButton()</script>
+              </div>
+              <script>
+                document.getElementById("cardinput").style.visibility ="hidden";
+                document.getElementById("back").style.visibility ="hidden";
+                document.getElementById("submit").style.visibility ="hidden";
+                document.getElementById("item").style.visibility ="hidden";
+                document.getElementById("node").style.visibility ="hidden";
+              </script>
+            </div>
+          </div>
+        </div>
+     </div>
+    </main>
+
+  </div>
+</div>
+</body>
+<!--<script src="../umd/xmind-embed-viewer.js"></script>-->
+<script src="/xmind"></script>
+<script>
+  const selectFileFromLocal = async (ext) => {
+    const fileSelector = document.createElement('input')
+    fileSelector.style.display = 'none'
+    document.body.appendChild(fileSelector)
+    await new Promise(resolve => {
+      fileSelector.setAttribute('type', 'file')
+      fileSelector.setAttribute('accept', ext)
+      fileSelector.addEventListener('change', () => {
+        resolve()
+      })
+      fileSelector.click()
+    }).finally(() => {
+      document.body.removeChild(fileSelector)
+    })
+    if (!fileSelector.files || !fileSelector.files.length) {
+      return
+    }
+    return fileSelector.files[0]
+  }
+  const init = async () => {
+
+    const container = document.querySelector('#mount')
+    const res = await fetch('test-1.xmind')
+    const viewer = new XMindEmbedViewer({
+      el: '#mount',
+      file: await res.arrayBuffer(),
+      styles: {
+        'height': '550px',
+        'width': '75%'
+      }
+    })
+
+  
+
+    const loadFileFromComputerButton = document.createElement('button')
+    loadFileFromComputerButton.textContent = 'Open Local File'
+    loadFileFromComputerButton.addEventListener('click', async () => {
+      const file = await selectFileFromLocal('.xmind')
+      if (!file) return
+      viewer.load(await file.arrayBuffer())
+    })
+
+    document.body.appendChild(loadFileFromComputerButton)
+
+
+
+
+    // const requestFullscreenButton = document.createElement('button')
+    // requestFullscreenButton.textContent = 'Enter Fullscreen'
+    // requestFullscreenButton.addEventListener('click', () => viewer.requestFullscreen())
+    // const exitFullscreenButton = document.createElement('button')
+    // exitFullscreenButton.textContent = 'Exit Fullscreen'
+    // exitFullscreenButton.addEventListener('click', () => viewer.exitFullscreen())
+    // const toggleFullscreenButton = document.createElement('button')
+    // toggleFullscreenButton.textContent = 'Toggle Fullscreen'
+    // toggleFullscreenButton.addEventListener('click', () => viewer.exitFullscreen())
+    // document.body.appendChild(requestFullscreenButton)
+    // document.body.appendChild(exitFullscreenButton)
+    // document.body.appendChild(toggleFullscreenButton)
+
+    window.viewer = viewer
+  }
+
+  init()
+  function clickFinishButton() {
+    if(confirm('終了してもよろしいですか？'))
+      location.href='/';
+    else
+      return;
+  }
+
+  function clickSaveButton() {
+    if(confirm('保存して終了してもよろしいですか？'))
+      location.href='/';
+    else
+      return;
+  }
+
+  function clickAddButton() {
+    var a = document.getElementById("parent");
+    var parent = a.value;
+    alert(sw);
+    switch(sw){
+      case 'A':
+        var a0 = document.getElementById("A-1");
+        var a1 = document.getElementById("A-2");
+        var a2 = document.getElementById("A-3");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3"];
+        var d = [a0.value, a1.value, a2.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+      case 'B':
+        var a0 = document.getElementById("B-1");
+        var a1 = document.getElementById("B-2");
+        var a2 = document.getElementById("B-3");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3"];
+        var d = [a0.value, a1.value, a2.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+      case 'C':
+        var a0 = document.getElementById("C-1");
+        var a1 = document.getElementById("C-2");
+        var a2 = document.getElementById("C-3");
+        var a3 = document.getElementById("C-4");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3", parent+"-4"];
+        var d = [a0.value, a1.value, a2.value, a3.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+      case 'D':
+        var a0 = document.getElementById("D-1");
+        var a1 = document.getElementById("D-2");
+        var a2 = document.getElementById("D-3");
+        var a3 = document.getElementById("D-4");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3", parent+"-4"];
+        var d = [a0.value, a1.value, a2.value, a3.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+      case 'E':
+        var a0 = document.getElementById("E-1");
+        var a1 = document.getElementById("E-2");
+        var a2 = document.getElementById("E-3");
+        var a3 = document.getElementById("E-4");
+        var a4 = document.getElementById("E-5");
+        var a5 = document.getElementById("E-6");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3", parent+"-4", parent+"-5", parent+"-6"];
+        var d = [a0.value, a1.value, a2.value, a3.value, a4.value, a5.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+      case 'F':
+        var a0 = document.getElementById("F-1");
+        var a1 = document.getElementById("F-2");
+        var a2 = document.getElementById("F-3");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3"];
+        var d = [a0.value, a1.value, a2.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+      case 'G':
+        var a0 = document.getElementById("G-1");
+        var a1 = document.getElementById("G-2");
+        var a2 = document.getElementById("G-3");
+        var a3 = document.getElementById("G-4");
+        var a4 = document.getElementById("G-5");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3", parent+"-4", parent+"-5"];
+        var d = [a0.value, a1.value, a2.value, a3.value, a4.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+      case 'H':
+        var a0 = document.getElementById("H-1");
+        var a1 = document.getElementById("H-2");
+        var a2 = document.getElementById("H-3");
+        var a3 = document.getElementById("H-4");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3", parent+"-4"];
+        var d = [a0.value, a1.value, a2.value, a3.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+      case 'I':
+        var a0 = document.getElementById("I-1");
+        var a1 = document.getElementById("I-2");
+        var a2 = document.getElementById("I-3");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3"];
+        var d = [a0.value, a1.value, a2.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+
+      case 'K':
+        var a0 = document.getElementById("K-1");
+        var a1 = document.getElementById("K-2");
+        var a2 = document.getElementById("K-3");
+        var a3 = document.getElementById("K-4");
+        var a4 = document.getElementById("K-5");
+        var a5 = document.getElementById("K-6");
+        var a6 = document.getElementById("K-7");
+        var items_num = [parent+"-1", parent+"-2", parent+"-3", parent+"-4", parent+"-5", parent+"-6", parent+"-7"];
+        var d = [a0.value, a1.value, a2.value, a3.value, a4.value, a5.value, a6.value];
+
+        var data = {　//カード
+          parent: parent,//親ノード
+          items_num: items_num,//ノードのID
+          items: d,//ノードの内容
+        }
+        break;
+
+      default:
+        alert("失敗");
+        break;
+    }
+
+    alert(data.parent + data.items[0]+data.items[1]+data.items[2]);
+
+  }
+
+  function clickBackButton(){
+    // 表示
+    document.getElementById("card").style.visibility ="visible";
+    document.getElementById("A").style.visibility ="hidden";
+    document.getElementById("B").style.visibility ="hidden";
+    document.getElementById("C").style.visibility ="hidden";
+    document.getElementById("D").style.visibility ="hidden";
+    document.getElementById("E").style.visibility ="hidden";
+    document.getElementById("F").style.visibility ="hidden";
+    document.getElementById("G").style.visibility ="hidden";
+    document.getElementById("H").style.visibility ="hidden";
+    document.getElementById("I").style.visibility ="hidden";
+    document.getElementById("J").style.visibility ="hidden";
+    document.getElementById("K").style.visibility ="hidden";
+    document.getElementById("node").style.visibility ="hidden";
+
+    document.getElementById("parent").style.visibility ="hidden";
+    // 非表示
+    document.getElementById("back").style.visibility ="hidden";
+    // 非表示
+    document.getElementById("submit").style.visibility ="hidden";
+  }
+
+  function clickCard1(){
+    clickCard();
+    document.getElementById("A").style.visibility ="visible";
+    sw = 'A';
+  }
+
+  function clickCard2(){
+    clickCard();
+    document.getElementById("B").style.visibility ="visible";
+    sw = 'B';
+  }
+  function clickCard3(){
+    clickCard();
+    document.getElementById("C").style.visibility ="visible";
+    sw = 'C';
+  }
+
+  function clickCard4(){
+    clickCard();
+    document.getElementById("D").style.visibility ="visible";
+    sw = 'D';
+  }
+
+  function clickCard5(){
+    clickCard();
+    document.getElementById("E").style.visibility ="visible";
+    sw = 'E';
+  }
+  function clickCard6(){
+    clickCard();
+    document.getElementById("F").style.visibility ="visible";
+    sw = 'F';
+  }
+
+  function clickCard7(){
+    clickCard();
+    document.getElementById("G").style.visibility ="visible";
+    sw = 'G';
+  }
+  function clickCard8(){
+    clickCard();
+    document.getElementById("H").style.visibility ="visible";
+    sw = 'H';
+  }
+
+  function clickCard9(){
+    clickCard();
+    document.getElementById("I").style.visibility ="visible";
+    sw = 'I';
+  }
+
+  function clickCard10(){
+    clickCard();
+    document.getElementById("J").style.visibility ="visible";
+    sw = 'J';
+  }
+  function clickCard11(){
+    clickCard();
+    document.getElementById("K").style.visibility ="visible";
+    sw = 'K';
+  }
+
+
+  function clickCard(){
+    // 非表示
+    document.getElementById("card").style.visibility ="hidden";
+
+    // 表示
+    document.getElementById("back").style.visibility ="visible";
+    document.getElementById("parent").style.visibility ="visible";
+
+    // 表示
+    document.getElementById("submit").style.visibility ="visible";
+    document.getElementById("node").style.visibility ="visible";
+
+  }
+  
+  async function clickitem(td){
+    var text = td.textContent;
+    try {
+      await navigator.clipboard.writeText(text)
+      alert('コピーしました')
+    } catch (error) {
+    alert((error && error.message) || 'コピーに失敗しました')
+   }
+  }        
+
+</script>
+</html>
+
+<style>
+  body{
+    background-image: url(http://ks.ee.kansai-u.ac.jp/wp-content/themes/travelify/images/background.png);
+}
+
+.btn{
+    width: 100px;
+    height: 40px;
+    flex-shrink: 0;
+    border: 1px solid #000000;
+    background: rgba(94, 222, 215, 0.38);
+}
+
+.btn:active{
+    background: rgba(2, 99, 94, 0.38);
+}
+
+.xmindarea{
+    position:absolute;
+    width: 75%;
+    height: 95%;
+   /* border: 2px solid #000000;*/
+    background-color: white;
+}
+
+.xmindbutton{
+    position: absolute;
+    bottom: 1%;
+    padding-left: 1%;
+}
+
+.sidearea{
+    position: absolute;
+    width: 20%;
+    height: 95%;
+    left: 77%;
+    padding-right:1%;
+}
+
+.listarea{
+    position: relative;
+    width: 100%;
+    height:30%;
+    border: solid 1px #4e4e4e;
+    margin-bottom: 10%;
+    overflow: auto;
+    background-color: white;
+}
+
+
+.cardarea{
+    position:relative;
+    width: 100%;
+    height: 65%;
+    border: 1px solid hsl(0, 0%, 0%);
+    overflow: auto;
+}
+
+.cardinput{
+    position:relative;
+    width: 100%;
+    height: 65%;
+    bottom: 65%;
+    border: 1px solid hsl(0, 0%, 0%);
+}
+
+.cardbutton{
+    position: absolute;
+    bottom: 1%;
+    padding-left: 1%;
+}
+
+img{
+    width: 95%;
+    height: 50%;
+}
+
+ul {
+    list-style: none;
+  }
+
+.item:hover{
+    cursor: pointer;
+}
+
+</style>
